@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Unforgiving List</title>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.2.41.min.js" defer></script>
+    <script src="todo.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale = 1.0, user-scalable=yes">
+    <meta name="google-signin-client_id" content="650303571941-ni3rs3mok8g7v6jdjt107b0lfqbo3m56.apps.googleusercontent.com">
+    <link rel="stylesheet" href="todostyle.css" type="text/css" charset="utf-8">
+</head>
+<body>
+    <header>
+        Unforgiving List
+        <button id="openLoginModalButton" class="myButton" type="button">
+            Logout
+        </button>
+    </header>
+    <main>
+        <div id="main">
+            <div id="tasks"></div>
+            <div id="logoutModal" class="modalDialog">
+                <div>
+                    <h2>Are you sure want to log out?</h2>
+                    <button id="logoutButton" class="myButton" type="button">
+                        Logout
+                    </button>
+                    <span id="closeLogoutModalButton" class="close">Back</span>
+                </div>
+            </div>
+            <div id="loginModal" class="modalDialog">
+                <div>
+                    <h2>Login</h2>
+                    <div id="useCognitoButton" class="g-signin2" data-onsuccess="onSignIn"></div>
+                    <button id="useLocalButton" class="myButton" type="button">
+                        Stay Local
+                    </button>
+                    <span id="closeLoginModal" class="close">Back</span>
+                </div>
+            </div>
+            <div id="addTaskModal" class="modalDialog">
+                <div>
+                    <h2>Create New Task</h2>
+                    <input type="text" autofocus id="newTaskInput"
+                        placeholder="New Task Description" maxlength = "30"/>
+                    <button id="addTaskButton" class="myButton" type="submit">
+                        Create
+                    </button>
+                    <span id="closeAddTaskModal" class="close">Back</span>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <img id="openAddTaskModalButton" src="plus.png" alt="Add Task"/>
+    </footer>
+</body>
+
+</html>
